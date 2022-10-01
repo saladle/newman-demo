@@ -1,0 +1,53 @@
+<div class="container">
+  <div nz-row>
+    <div nz-col nzSpan="24" class="form-container">
+      <form nz-form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div nz-row class="text-center">
+          <b>Đăng nhập</b>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="6">
+            <p>Tài khoản</p>
+          </div>
+          <div nz-col nzSpan="18">
+            <nz-form-control nzErrorTip="Vui lòng nhập tên tài khoản!">
+              <nz-input-group>
+                <input
+                  nz-input
+                  name="username"
+                  id="username"
+                  placeholder="Nhập tài khoản"
+                  formControlName="userName"
+                  [(ngModel)]="log_username"
+              /></nz-input-group>
+            </nz-form-control>
+          </div>
+        </div>
+
+        <div nz-row>
+          <div nz-col nzSpan="6">
+            <p>Mật khẩu</p>
+          </div>
+          <div nz-col nzSpan="18">
+            <nz-form-control nzErrorTip="Vui lòng nhập mật khẩu!">
+              <nz-input-group>
+                <input
+                  nz-input
+                  name="password"
+                  id="password"
+                  placeholder="Nhập mật khẩu"
+                  formControlName="password"
+                  [(ngModel)]="log_password"
+                  (keyup.enter)="login()"
+              /></nz-input-group>
+            </nz-form-control>
+          </div>
+        </div>
+
+        <div nz-row>
+          <button nz-button nzType="primary">Đăng nhập</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
